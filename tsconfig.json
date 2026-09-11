@@ -3,10 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/layouts/*": ["src/layouts/*"],
-      "@/components/*": ["src/components/*"],
-      "@/data/*": ["src/data/*"],
-      "@/assets/*": ["src/assets/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@components/*": ["src/components/*"],
+      "@data/*": ["src/data/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "include": [".astro/types.d.ts", "**/*"],
