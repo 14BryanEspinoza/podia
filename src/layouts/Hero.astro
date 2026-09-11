@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import Link from "@/components/Link.astro";
+import wallpaper from "../assets/wallpaper.png";
+import Button from "@/components/Button.astro";
+---
+
+<section
+  class="grid grid-cols-1 gap-12 bg-back px-4 py-8 md:grid-cols-2 lg:gap-24 lg:px-12 lg:py-18"
+  aria-labelledby="home-title"
+>
+  <div>
+    <h1
+      id="hero-title"
+      class="mb-4 text-3xl font-bold text-text lg:mb-6 lg:text-5xl"
+    >
+      Build Beautiful Websites With Modern Web Technologies
+    </h1>
+
+    <p class="mb-4 text-lg text-text lg:mb-12 lg:text-xl">
+      Craft semantic HTML, fluid CSS layouts, and interactive JavaScript
+      experiences. Every line of code is built with purpose and attention to
+      detail.
+    </p>
+
+    <Button
+      label="Start Building Today"
+      className="border-none px-8 py-4"
+      variant
+    />
+  </div>
+
+  <figure class="overflow-hidden rounded-md md:max-w-xl">
+    <Image src={wallpaper} alt="imagen del hero" priority />
+  </figure>
+</section>
