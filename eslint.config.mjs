@@ -16,7 +16,7 @@ export default [
   {
     settings: {
       tailwindcss: {
-        cssConfigPath: "src/styles/global.css",
+        cssFiles: ["src/styles/global.css"],
       },
     },
     plugins: {
@@ -25,7 +25,8 @@ export default [
     rules: {
       "no-console": "warn",
       "prefer-const": "error",
-      "no-unused-vars": [
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
         "warn",
         {
           argsIgnorePattern: "^_",
