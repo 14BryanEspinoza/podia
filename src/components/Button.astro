@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string;
+  className?: string;
+  variant?: boolean;
+}
+
+const { label, className, variant } = Astro.props as Props;
+
+const baseStyle =
+  "cursor-pointer text-sm px-6 py-1 border-2 border-border rounded-md transition-all hover:scale-105";
+const primaryStyle =
+  "text-bg bg-primary hover:text-text hover:bg-transparent hover:border-border";
+const outlineStyle = "text-text bg-transparent hover:text-bg hover:bg-primary";
+---
+
+<button
+  class={`${baseStyle} ${className} ${variant ? primaryStyle : outlineStyle}`}
+>
+  {label}
+</button>

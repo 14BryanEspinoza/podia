@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Link from "@/components/Link.astro";
+import Button from "@/components/Button.astro";
+import favicon from "@/assets/favicon.png";
+import { linkNavbar } from "@/data/links";
+---
+
+<header class="sticky top-0 z-10 flex flex-wrap items-center justify-between bg-bg p-4 shadow md:flex-nowrap md:px-8">
+  <figure class="size-8">
+    <a href="/">
+      <Image src={favicon} alt="Logo de la pagina" loading="eager" />
+    </a>
+  </figure>
+
+  <input type="checkbox" id="menu-toggle" class="peer hidden" />
+  <label for="menu-toggle" aria-label="Open menu">
+    <Icon name="lucide:menu" class="cursor-pointer text-3xl md:hidden" />
+  </label>
+
+  <nav
+    class="hidden h-[90dvh] w-full flex-col items-center justify-center gap-8 text-center peer-checked:flex md:flex md:h-auto md:w-auto"
+    aria-label="Principal"
+  >
+    <ul role="list" class="md:flex md:items-center md:gap-4">
+      {linkNavbar.map((link) => (
+        <li>
+          <Link
+            url={link.url}
+            label={link.label}
+            className="mt-4 block md:mt-0"
+          />
+        </li>
+      ))}
+      <li>
+        <Button label="Sing In" className="mt-12 md:mt-0 md:ml-8" />
+      </li>
+      <li>
+        <Button label="Sing Up Free" className="mt-4 md:mt-0" variant />
+      </li>
+    </ul>
+  </nav>
+</header>
