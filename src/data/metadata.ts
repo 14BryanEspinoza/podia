@@ -1,4 +1,4 @@
-interface Metadata {
+interface MetaProps {
   description: string;
   keywords: string;
   author: string;
@@ -7,7 +7,7 @@ interface Metadata {
   canonical: string;
 }
 
-export const metadata: Metadata = {
+export const metadata: MetaProps = {
   description:
     "HTML and CSS practice project inspired by the Podia challenge of the Frontend Practice page.",
   keywords: "Podia, HTML Practice, CSS Practice, Frontend-Practice",
