@@ -16,7 +16,7 @@ export default [
   {
     settings: {
       tailwindcss: {
-        cssFiles: ["src/styles/global.css"],
+        cssConfigPath: "src/styles/global.css",
       },
     },
     plugins: {
