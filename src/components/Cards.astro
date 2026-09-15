@@ -4,17 +4,24 @@ import { Icon } from "astro-icon/components";
 interface Props {
   title: string;
   description: string;
-  icon: string;
+  icon?: string;
+  book?: boolean;
   className?: string;
 }
 
-const { title, description, icon, className } = Astro.props as Props;
+const baseStyle =
+  "cursor-pointer rounded-md border border-border bg-bg-secondary p-8 transition-all hover:scale-105";
+const bookStyle = "border-l-4 border-l-primary";
+
+const { title, description, icon, book, className } = Astro.props as Props;
 ---
 
-<article class="cursor-pointer rounded-md border border-border bg-bg-secondary p-8 transition-all hover:scale-105">
-  <div class="mb-4 flex size-10 items-center justify-center rounded-md bg-primary text-bg">
-    <Icon name={icon} class={className} />
-  </div>
+<article class={`${baseStyle} ${book ? bookStyle : ""}`}>
+  {icon && (
+    <div class="mb-4 flex size-10 items-center justify-center rounded-md bg-primary text-bg">
+      <Icon name={icon} class={className} />
+    </div>
+  )}
 
   <h3 class="mb-4 font-bold text-primary">{title}</h3>
 
