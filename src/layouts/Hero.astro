@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import wallpaper from "@assets/wallpaper.png";
 import Button from "@components/Button.astro";
 ---
@@ -30,6 +30,11 @@ import Button from "@components/Button.astro";
   </div>
 
   <figure class="overflow-hidden rounded-md md:max-w-xl">
-    <Image src={wallpaper} alt="imagen del hero" priority />
+    <Picture
+      src={wallpaper}
+      alt="imagen del hero"
+      formats={["avif", "webp"]}
+      priority
+    />
   </figure>
 </section>
