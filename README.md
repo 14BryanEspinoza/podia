@@ -2,7 +2,7 @@
 
 > Recreación del challenge de **Podia** de [Frontend Practice](https://www.frontendpractice.com/) migrado a **Astro 7** (SSG) con optimización de imágenes, Tailwind CSS v4 y despliegue automático a GitHub Pages.
 
-![Preview](img/preview.png)
+![Preview](public/preview.png)
 
 ---
 
