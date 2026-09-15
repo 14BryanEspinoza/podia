@@ -5,15 +5,11 @@ import { books } from "@data/books";
 ---
 
 <section class="px-8 py-24 md:px-12 lg:px-16" aria-labelledby="feature-title">
-  <ContainerText
-    id="feature"
-    title={books.title}
-    description={books.description}
-  />
+  <ContainerText id="feature" {...books} />
 
   <div class="grid-col-1 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
     {books.card.map((book) => (
-      <Cards title={book.title} description={book.description} book={true} />
+      <Cards {...book} book />
     ))}
   </div>
 </section>

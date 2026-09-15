@@ -5,11 +5,7 @@ import { gallery } from "@data/gallery";
 ---
 
 <section class="px-8 py-24 md:px-12 lg:px-16" aria-labelledby="products-title">
-  <ContainerText
-    id="products"
-    title={gallery.title}
-    description={gallery.description}
-  />
+  <ContainerText id="products" {...gallery} />
 
   <div class="grid-col-1 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
     {gallery.image.map((image) => (
