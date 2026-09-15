@@ -1,0 +1,38 @@
+---
+import { Picture } from "astro:assets";
+import Button from "@components/Button.astro";
+import Cite from "@components/Cite.astro";
+import short from "@assets/short.png";
+---
+
+<section
+  class="grid grid-cols-1 items-center gap-4 bg-bg-secondary px-8 py-24 text-center lg:grid-cols-2"
+  aria-labelledby="testimonial-title"
+>
+  <figure class="mx-auto w-44 overflow-hidden rounded-md lg:w-auto">
+    <Picture
+      src={short}
+      alt="Frontend developer working on a responsive web design project"
+      formats={["avif", "webp"]}
+      layout="constrained"
+      loading="lazy"
+      decoding="async"
+    />
+  </figure>
+
+  <div class="md:mx-auto md:max-w-xl">
+    <h2 id="testimonial-title" class="mb-4 text-lg font-bold text-primary">
+      Featured Developer Story
+    </h2>
+
+    <Cite />
+
+    <p class="mb-4 text-accent">
+      Thousands of developers, from beginners to seasoned professionals, build
+      their skills with Podia. Discover how learning web development can open
+      doors you never imagined.
+    </p>
+
+    <Button label="Start building today ->" variant />
+  </div>
+</section>
