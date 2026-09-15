@@ -1,0 +1,31 @@
+---
+import { Picture } from "astro:assets";
+import ContainerText from "@components/ContainerText.astro";
+import { gallery } from "@data/gallery";
+---
+
+<section class="px-8 py-24" aria-labelledby="products-title">
+  <ContainerText
+    id="products"
+    title={gallery.title}
+    description={gallery.description}
+  />
+
+  <div class="grid-col-1 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {gallery.image.map((image) => (
+      <figure>
+        <Picture
+          src={image.src}
+          alt={image.alt}
+          formats={["avif", "webp"]}
+          layout="constrained"
+          loading="lazy"
+          decoding="async"
+          class:list={[
+            "aspect-4/3 object-cover rounded-md shadow transition hover:scale-105",
+          ]}
+        />
+      </figure>
+    ))}
+  </div>
+</section>
