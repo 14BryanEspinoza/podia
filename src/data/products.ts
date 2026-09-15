@@ -1,14 +1,14 @@
-interface ProductsProps {
+export interface CardsProps {
   title: string;
   description: string;
   card: {
     title: string;
     description: string;
-    icon: string;
+    icon?: string;
   }[];
 }
 
-export const products: ProductsProps = {
+export const products: CardsProps = {
   title: "Build With the Core Technologies of the Web",
   description:
     "From semantic structure to fluid layouts and interactive experiences, every modern website is powered by the same trio of technologies. Master them and you can build anything.",
