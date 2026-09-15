@@ -1,0 +1,20 @@
+---
+import ContainerText from "@components/ContainerText.astro";
+import Cards from "@components/Cards.astro";
+import { features } from "@data/affiliates";
+---
+
+<section
+  class="bg-bg-secondary px-8 py-24 md:px-12 lg:px-16"
+  aria-labelledby="affiliates-title"
+>
+  <div class="grid grid-cols-1 items-center gap-4 lg:grid-cols-2 lg:gap-12">
+    <ContainerText {...features} id="affiliates-title" />
+
+    <div class="grid grid-cols-1 gap-4">
+      {features.feat.map((feature) => (
+        <Cards {...feature} book />
+      ))}
+    </div>
+  </div>
+</section>
