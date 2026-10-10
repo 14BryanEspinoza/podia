@@ -22,7 +22,7 @@ import { linkNavbar } from "@data/links";
   <button
     type="button"
     id="menu-toggle"
-    class="lg:hidden"
+    class="md:hidden"
     aria-expanded="false"
     aria-controls="nav-main"
     aria-label="menú de navegación"
@@ -39,18 +39,21 @@ import { linkNavbar } from "@data/links";
     class="hidden h-[90dvh] w-full flex-col items-center justify-center text-center md:flex md:h-auto md:w-auto"
     aria-label="Navegación Principal"
   >
-    <ul role="list" class="md:flex md:items-center md:gap-4">
+    <ul role="list" class="md:flex md:items-center md:gap-2 lg:gap-4">
       {linkNavbar.map((link) => (
         <li>
           <Link
             url={link.url}
             label={link.label}
-            className="mt-6 md:mt-0 md:ml-4"
+            className="mt-6 md:mt-0 md:ml-2 lg:ml-4"
           />
         </li>
       ))}
       <li>
-        <Button label="Iniciar sesión" className="mt-12 md:mt-0 md:ml-8" />
+        <Button
+          label="Iniciar sesión"
+          className="mt-12 md:mt-0 md:ml-4 lg:ml-8"
+        />
       </li>
       <li>
         <Button label="Regístrate gratis" className="mt-6 md:mt-0" variant />
