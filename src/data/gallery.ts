@@ -18,38 +18,41 @@ interface GalleryProps {
 }
 
 export const gallery: GalleryProps = {
-  title: "Real Projects Built by Real Developers.",
+  title: "Proyectos reales creados por desarrolladores reales.",
   description:
-    "From personal portfolios to complex web applications, see what developers like you are creating with modern web technologies every day.",
+    "Desde portafolios personales hasta aplicaciones web complejas, descubre lo que desarrolladores como tú crean cada día con tecnologías web modernas.",
   image: [
     {
       src: card1,
-      alt: "Code editor showing semantic HTML5 structure with proper headings and landmarks",
+      alt: "Editor de código que muestra una estructura HTML5 semántica con encabezados y landmarks adecuados",
     },
     {
       src: card2,
-      alt: "CSS grid layout preview with responsive breakpoints across devices",
+      alt: "Vista previa de un diseño con CSS Grid y breakpoints responsivos en distintos dispositivos",
     },
     {
       src: card3,
-      alt: "JavaScript console showing DOM manipulation and event handling",
+      alt: "Consola de JavaScript que muestra manipulación del DOM y manejo de eventos",
     },
     {
       src: card4,
-      alt: "Responsive website design adapting from desktop to mobile viewport",
+      alt: "Diseño web responsivo que se adapta desde el viewport de escritorio hasta el de móvil",
     },
     {
       src: card5,
-      alt: "Git workflow diagram showing branching, merging, and deployment",
+      alt: "Diagrama de flujo de trabajo con Git que muestra ramificación, fusión y despliegue",
     },
     {
       src: card6,
-      alt: "Browser DevTools panel inspecting CSS styles and layout",
+      alt: "Panel de DevTools del navegador que inspecciona los estilos CSS y el diseño",
     },
     {
       src: card7,
-      alt: "Package.json file showing project dependencies and scripts",
+      alt: "Archivo package.json que muestra las dependencias y los scripts del proyecto",
     },
-    { src: card8, alt: "Lighthouse performance audit scoring Core Web Vitals" },
+    {
+      src: card8,
+      alt: "Auditoría de rendimiento de Lighthouse que evalúa los Core Web Vitals",
+    },
   ],
 };

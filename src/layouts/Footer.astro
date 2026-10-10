@@ -8,13 +8,13 @@ import { linkTech, linkCompany, linkLearning, linkOthers } from "@data/links";
     <div class="">
       <h2 class="mb-4 text-lg font-bold">Podia</h2>
       <p class="mb-8 text-accent">
-        Build websites, learn development, and grow your skills.
+        Crea sitios web, aprende desarrollo y mejora tus habilidades.
       </p>
     </div>
 
     <div class="grid grid-cols-3 gap-4 lg:w-1/2">
       <div>
-        <h3 class="mb-4 text-sm">Technologies</h3>
+        <h3 class="mb-4 text-sm">Tecnologías</h3>
 
         <ul class="flex flex-col gap-4" role="list">
           {linkTech.map((link) => (
@@ -26,7 +26,7 @@ import { linkTech, linkCompany, linkLearning, linkOthers } from "@data/links";
       </div>
 
       <div>
-        <h3 class="mb-4">Company</h3>
+        <h3 class="mb-4">Empresa</h3>
 
         <ul class="flex flex-col gap-4" role="list">
           {linkCompany.map((link) => (
@@ -38,7 +38,7 @@ import { linkTech, linkCompany, linkLearning, linkOthers } from "@data/links";
       </div>
 
       <div>
-        <h3 class="mb-4">Learning</h3>
+        <h3 class="mb-4">Aprendizaje</h3>
 
         <ul class="flex flex-col gap-4" role="list">
           {linkLearning.map((link) => (
@@ -52,7 +52,7 @@ import { linkTech, linkCompany, linkLearning, linkOthers } from "@data/links";
   </div>
 
   <div class="mt-4 flex flex-col items-center gap-8 border-t border-accent py-8 md:flex-row md:justify-between">
-    <nav aria-label="Legal links">
+    <nav aria-label="Enlaces legales">
       <ul class="flex gap-12" role="list">
         {linkOthers.map((link) => (
           <li>

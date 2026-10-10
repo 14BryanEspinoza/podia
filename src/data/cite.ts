@@ -5,7 +5,7 @@ interface CiteProps {
 }
 
 export const cite: CiteProps = {
-  cite: "I love building for the web because it combines creativity with logic. Every project is a new challenge, and the satisfaction of seeing it come to life never gets old.",
+  cite: "Me encanta crear para la web porque combina creatividad con lógica. Cada proyecto es un nuevo desafío, y la satisfacción de verlo cobrar vida nunca se agota.",
   author: "Martin Quintanilla",
-  job: "Frontend Developer",
+  job: "Desarrollador Frontend",
 };

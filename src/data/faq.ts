@@ -7,27 +7,27 @@ interface FaqProps {
 }
 
 export const faq: FaqProps = {
-  title: "Frequently Asked Questions",
+  title: "Preguntas frecuentes",
   question: [
     {
-      summary: "What do I need to start learning web development?",
-      info: "All you need is a computer, a text editor, and a web browser. Start with HTML for structure, CSS for styling, and JavaScript for interactivity. No prior experience required.",
+      summary: "¿Qué necesito para empezar a aprender desarrollo web?",
+      info: "Solo necesitas una computadora, un editor de texto y un navegador web. Comienza con HTML para la estructura, CSS para los estilos y JavaScript para la interactividad. No se requiere experiencia previa.",
     },
     {
-      summary: "How long does it take to build a website?",
-      info: "A simple one-page site can be built in a few hours once you know the basics. More complex projects like web applications can take weeks or months, depending on the features and your experience level.",
+      summary: "¿Cuánto tiempo se tarda en crear un sitio web?",
+      info: "Un sitio sencillo de una página se puede crear en unas pocas horas cuando ya conoces lo básico. Proyectos más complejos, como aplicaciones web, pueden llevar semanas o meses, según las características y tu nivel de experiencia.",
     },
     {
-      summary: "What tools do professional developers use?",
-      info: "Developers use code editors (VS Code), version control (Git), package managers (npm/pnpm), build tools (Vite), and browser DevTools. Each tool serves a specific purpose in the development workflow.",
+      summary: "¿Qué herramientas usan los desarrolladores profesionales?",
+      info: "Los desarrolladores usan editores de código (VS Code), control de versiones (Git), gestores de paquetes (npm/pnpm), herramientas de build (Vite) y los DevTools del navegador. Cada herramienta cumple una función específica en el flujo de trabajo de desarrollo.",
     },
     {
-      summary: "Do I need to know design to be a developer?",
-      info: "Not necessarily. While understanding design principles helps, many developers specialize in frontend or backend logic. CSS frameworks and design systems can help you create good-looking sites without a design background.",
+      summary: "¿Necesito saber de diseño para ser desarrollador?",
+      info: "No necesariamente. Aunque entender principios de diseño ayuda, muchos desarrolladores se especializan en la lógica de frontend o backend. Los frameworks de CSS y los design systems pueden ayudarte a crear sitios atractivos sin tener experiencia en diseño.",
     },
     {
-      summary: "How do I stay updated with new web technologies?",
-      info: "Follow developer blogs, join online communities, attend webinars, and practice regularly. The web evolves fast, but the fundamentals — HTML, CSS, and JavaScript — remain essential.",
+      summary: "¿Cómo me mantengo al día con las nuevas tecnologías web?",
+      info: "Sigue blogs de desarrolladores, únete a comunidades en línea, asiste a webinars y practica regularmente. La web evoluciona rápido, pero los fundamentos — HTML, CSS y JavaScript — siguen siendo esenciales.",
     },
   ],
 };
