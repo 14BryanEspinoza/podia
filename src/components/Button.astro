@@ -5,13 +5,13 @@ interface Props {
   variant?: boolean;
 }
 
-const { label, className, variant } = Astro.props as Props;
-
 const baseStyle =
-  "cursor-pointer text-sm px-6 py-1 border-2 border-border rounded-md transition-all hover:scale-105";
+  "cursor-pointer text-sm px-6 py-2 border-2 border-border rounded-md transition hover:scale-105";
 const primaryStyle =
   "text-bg bg-primary hover:text-text hover:bg-transparent hover:border-border";
 const outlineStyle = "text-text bg-transparent hover:text-bg hover:bg-primary";
+
+const { label, className = "", variant } = Astro.props as Props;
 ---
 
 <button
