@@ -1,18 +1,12 @@
 ---
 import { Picture } from "astro:assets";
-import wallpaper from "@assets/wallpaper.png";
 import Button from "@components/Button.astro";
+import wallpaper from "@assets/wallpaper.png";
 ---
 
-<section
-  class="grid grid-cols-1 gap-12 bg-back px-4 py-8 md:grid-cols-2 lg:gap-24 lg:px-12 lg:py-18"
-  aria-labelledby="home-title"
->
+<section class="grid grid-cols-1 gap-12 bg-back p-8 md:grid-cols-2 lg:gap-24 lg:px-12 lg:py-18">
   <div>
-    <h1
-      id="home-title"
-      class="mb-4 text-3xl font-bold text-text md:leading-10 lg:mb-6 lg:text-5xl lg:leading-16"
-    >
+    <h1 class="mb-4 text-3xl font-bold text-text md:leading-10 lg:mb-6 lg:text-5xl lg:leading-16">
       Crea sitios web hermosos con tecnologías web modernas
     </h1>
 
@@ -24,7 +18,7 @@ import Button from "@components/Button.astro";
 
     <Button
       label="Empieza a crear hoy"
-      className="border-none px-8 py-4"
+      className="border-none px-6 py-2"
       variant
     />
   </div>
@@ -35,6 +29,7 @@ import Button from "@components/Button.astro";
       alt="imagen del hero"
       formats={["avif", "webp"]}
       priority
+      class="h-full w-full object-cover"
     />
   </figure>
 </section>
