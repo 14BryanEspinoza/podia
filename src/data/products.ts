@@ -9,32 +9,32 @@ export interface CardsProps {
 }
 
 export const products: CardsProps = {
-  title: "Build With the Core Technologies of the Web",
+  title: "Crea con las tecnologías básicas de la web",
   description:
-    "From semantic structure to fluid layouts and interactive experiences, every modern website is powered by the same trio of technologies. Master them and you can build anything.",
+    "Desde una estructura semántica hasta diseños fluidos y experiencias interactivas, cada sitio web moderno se basa en el mismo trío de tecnologías. Si las dominas, podrás crear cualquier cosa.",
   card: [
     {
-      title: "Semantic HTML5",
+      title: "HTML5 semántico",
       description:
-        "Structure your content with semantic elements, accessible forms, and SEO-friendly markup. Build pages that are meaningful to both humans and machines.",
+        "Estructura tu contenido con elementos semánticos, formularios accesibles y marcado amigable para SEO. Crea páginas con sentido tanto para las personas como para las máquinas.",
       icon: "lucide:activity",
     },
     {
-      title: "Modern CSS3",
+      title: "CSS3 moderno",
       description:
-        "Build responsive layouts with Flexbox, Grid, and Container Queries. Bring designs to life with animations, transitions, and CSS custom properties.",
+        "Crea diseños responsivos con Flexbox, Grid y Container Queries. Da vida a tus diseños con animaciones, transiciones y propiedades personalizadas de CSS.",
       icon: "lucide:file-text",
     },
     {
       title: "JavaScript ES6+",
       description:
-        "Add interactivity with vanilla JavaScript. From DOM manipulation to async fetch, write clean, maintainable code that runs everywhere.",
+        "Añade interactividad con JavaScript vanilla. Desde la manipulación del DOM hasta el fetch asíncrono, escribe código limpio y mantenible que funcione en cualquier parte.",
       icon: "lucide:message-square",
     },
     {
-      title: "Responsive Design",
+      title: "Diseño responsivo",
       description:
-        "Create experiences that adapt to any screen. Mobile-first, progressive enhancement, and performance optimization for every device and connection speed.",
+        "Crea experiencias que se adapten a cualquier pantalla. Mobile-first, mejora progresiva y optimización del rendimiento para cada dispositivo y velocidad de conexión.",
       icon: "lucide:circle-play",
     },
   ],

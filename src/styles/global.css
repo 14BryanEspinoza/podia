@@ -3,15 +3,17 @@
 @theme {
   --font-default: "JetBrains Mono", monospace;
 
-  --color-text: #201445;
-  --color-text-secondary: #4b2aad;
-  --color-bg: #ffffff;
-  --color-bg-secondary: #fdfbf9;
-  --color-border: #f5efeb;
+  --color-text: #120926;
+  --color-text-secondary: #5c43a3;
 
-  --color-primary: #4b2aad;
-  --color-accent: #9484c6;
-  --color-back: #ccc0e0;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f7f5fa;
+
+  --color-border: #e2dceb;
+
+  --color-primary: #5833e4;
+  --color-accent: #ff6b6b;
+  --color-back: #e8e1f5;
 }
 
 html {
@@ -22,15 +24,9 @@ body {
   font-family: var(--font-default);
 }
 
-@media (max-width: 767px) {
-  .hide-mobile {
-    display: none;
-  }
-}
-
 :focus-visible {
   outline-offset: 2px;
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
 }
 
 @media (prefers-reduced-motion: reduce) {

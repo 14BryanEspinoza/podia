@@ -8,24 +8,24 @@ interface FeaturesProps {
 }
 
 export const features: FeaturesProps = {
-  title: "Learn, Build, and Grow as a Developer",
+  title: "Aprende, crea y crece como desarrollador",
   description:
-    "The best way to learn web development is by building real projects. Whether you're just starting or leveling up, there's always something new to discover.",
+    "La mejor manera de aprender desarrollo web es construyendo proyectos reales. Ya sea que estés empezando o quieras dar un paso más, siempre hay algo nuevo por descubrir.",
   feat: [
     {
-      title: "Learn at Your Own Pace",
+      title: "Aprende a tu propio ritmo",
       description:
-        "Start with the fundamentals and progress to advanced topics. HTML, CSS, JavaScript — build a solid foundation one step at a time.",
+        "Comienza con los fundamentos y avanza hacia temas más avanzados. HTML, CSS, JavaScript: construye una base sólida paso a paso.",
     },
     {
-      title: "Build Real-World Projects",
+      title: "Crea proyectos reales",
       description:
-        "Apply what you learn by building actual websites and applications. Portfolio-ready projects that demonstrate your skills to future employers.",
+        "Aplica lo que aprendes creando sitios web y aplicaciones reales. Proyectos listos para tu portafolio que demuestran tus habilidades a futuros empleadores.",
     },
     {
-      title: "Join a Supportive Community",
+      title: "Únete a una comunidad de apoyo",
       description:
-        "Connect with fellow developers, share knowledge, and get feedback on your code. Learn faster by growing together.",
+        "Conecta con otros desarrolladores, comparte conocimiento y recibe comentarios sobre tu código. Aprende más rápido creciendo junto a los demás.",
     },
   ],
 };

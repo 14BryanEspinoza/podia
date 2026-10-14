@@ -13,23 +13,23 @@ export const linkTech: LinksProps[] = [
   { url: "#", label: "HTML5" },
   { url: "#", label: "CSS3" },
   { url: "#", label: "JavaScript" },
-  { url: "#", label: "Responsive" },
+  { url: "#", label: "Diseño responsivo" },
 ];
 
 export const linkCompany: LinksProps[] = [
-  { url: "#", label: "About" },
+  { url: "#", label: "Acerca de" },
   { url: "#", label: "Blog" },
-  { url: "#", label: "Contact" },
+  { url: "#", label: "Contacto" },
 ];
 
 export const linkLearning: LinksProps[] = [
-  { url: "#", label: "Tutorials" },
-  { url: "#", label: "Docs" },
-  { url: "#", label: "Community" },
+  { url: "#", label: "Tutoriales" },
+  { url: "#", label: "Documentación" },
+  { url: "#", label: "Comunidad" },
 ];
 
 export const linkOthers: LinksProps[] = [
-  { url: "#", label: "Terms" },
-  { url: "#", label: "Privacy" },
+  { url: "#", label: "Términos" },
+  { url: "#", label: "Privacidad" },
   { url: "#", label: "Cookies" },
 ];

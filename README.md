@@ -1,178 +1,225 @@
 # Podia UI — Frontend Practice
 
-![Deploy](https://github.com/14BryanEspinoza/podia/actions/workflows/deploy.yml/badge.svg)
+[![Deploy](https://github.com/14BryanEspinoza/podia/actions/workflows/deploy.yml/badge.svg)](https://github.com/14BryanEspinoza/podia/actions/workflows/deploy.yml)
+[![CI](https://github.com/14BryanEspinoza/podia/actions/workflows/ci.yml/badge.svg)](https://github.com/14BryanEspinoza/podia/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> Recreación del challenge de **Podia** de [Frontend Practice](https://www.frontendpractice.com/) migrado a **Astro 7** (SSG) con optimización de imágenes, Tailwind CSS v4 y despliegue automático a GitHub Pages.
+> Recreación del challenge **Podia** de [Frontend Practice](https://www.frontendpractice.com/): sitio estático de **una sola página** construido con **Astro 7** (SSG) y **Tailwind CSS v4**, con view transitions, imágenes AVIF/WebP y despliegue automático a GitHub Pages.
 
 ![Preview](public/preview.png)
 
 ---
 
-## 🚀 Demo en vivo
+## 🌐 Demo en vivo
 
 **<https://14bryanespinoza.github.io/podia/>**
 
 ---
 
-## ✨ Características
-
-- **Astro 7** — Static Site Generation (SSG), zero-JS por defecto
-- **Tailwind CSS v4** — Configuración CSS-first con `@theme` y design tokens
-- **astro-icon + Lucide** — Iconos SVG optimizados (tree-shaking automático)
-- **Sharp** — Optimización de imágenes en build (AVIF, WebP, responsive srcset/sizes)
-- **@astrojs/sitemap** — Generación automática de `sitemap.xml` + `robots.txt` para SEO
-- **Font optimization** — Preconnect, preload, non-blocking CSS load (`font-display: swap`)
-- **TypeScript strict** — Tipado completo en componentes y data
-- **ESLint + Prettier** — Linting y formato unificado (con plugins Astro/Tailwind)
-- **Husky + lint-staged** — Pre-commit hooks que evitan commits rotos
-- **GitHub Pages via Actions** — Deploy automático en push a `main`
-
----
-
-## 📁 Estructura del proyecto
-
-```text
-src/
-├── components/          # Componentes reutilizables (Button, Link, Cards, ContainerText, Cite)
-├── data/                # Datos estructurados (metadata, products, books, faq, gallery, affiliates, links, cite)
-├── layouts/             # Layouts de página (Layout, Header, Hero, Products, Feature, Testimonial, Gallery, Affiliates, Faq, Footer)
-├── pages/               # Rutas (index.astro)
-└── styles/              # Estilos globales + design tokens (global.css)
-public/
-├── img/                 # Imágenes optimizadas por Astro (card1-8, wallpaper, favicon, etc.)
-├── favicon.png          # Favicon servido en raíz (/favicon.png)
-└── preview.png          # Imagen Open Graph / Twitter Card
-```
-
----
-
-## 🛠️ Comandos
+## 🚀 Inicio rápido
 
 ```bash
-# Instalar dependencias (pnpm)
-pnpm install
-
-# Desarrollo local (http://localhost:4321)
-pnpm dev
-
-# Build de producción (genera dist/)
-pnpm build
-
-# Preview del build local
-pnpm preview
-
-# Lint + formato
-pnpm lint
-pnpm format
-
-# Type check
-pnpm check
-
-> **Node requerido:** ≥ 22.12 (configurado en `package.json` y workflow CI)
+pnpm install       # instalar dependencias
+pnpm dev           # desarrollo local → http://localhost:4321
+pnpm preview       # previsualizar el build
 ```
 
----
+**Verificación** — los cuatro checks deben pasar en `0`:
 
-## 🌐 Despliegue
-
-El sitio se publica automáticamente en **GitHub Pages** vía Actions al hacer push a `main`:
-
-1. **Job `build`** — `withastro/action@v6` (Node 22) → `pnpm install` + `pnpm build` → sube `dist/` como artifact
-2. **Job `deploy`** — `actions/deploy-pages@v4` → publica el artifact en el entorno `github-pages`
-
-URL final: **<https://14bryanespinoza.github.io/podia/>**
-
-> La base path está configurada en `astro.config.mjs`:
-
-```js
-{
-  site: "https://14bryanespinoza.github.io/podia/",
-  base: "/podia/",
-  build: { assets: "assets" }
-}
+```bash
+pnpm format:check && pnpm lint && pnpm check && pnpm build
 ```
 
----
+| Comando             | Resultado esperado                 |
+| ------------------- | ---------------------------------- |
+| `pnpm format:check` | 0 archivos sin formatear           |
+| `pnpm lint`         | 0 errores                          |
+| `pnpm check`        | `astro check`: 0 errores, 0 avisos |
+| `pnpm build`        | 2 páginas generadas                |
 
-## 🧱 Componentes principales
+| Comando adicional | Uso                  |
+| ----------------- | -------------------- |
+| `pnpm lint:fix`   | `eslint . --fix`     |
+| `pnpm format`     | `prettier --write .` |
 
-| Componente            | Descripción                                         |
-| --------------------- | --------------------------------------------------- |
-| `Layout.astro`        | Shell HTML, metadata, fuentes, favicon, slots       |
-| `Header.astro`        | Navbar responsive, logo (favicon), menú mobile      |
-| `Hero.astro`          | Sección hero con fondo optimizado + CTA             |
-| `Products.astro`      | Sección de tecnologías core                         |
-| `Feature.astro`       | Sección de herramientas y mejores prácticas         |
-| `Testimonial.astro`   | Historias de desarrolladores destacados             |
-| `Gallery.astro`       | Galería de imágenes de proyectos de desarrolladores |
-| `Affiliates.astro`    | Características clave ("Learn, Build, Grow")        |
-| `Faq.astro`           | Preguntas frecuentes con detalles `<details>`       |
-| `Footer.astro`        | Footer con links, copyright, redes                  |
-| `Button.astro`        | Botón accesible (variant, size, asChild)            |
-| `Link.astro`          | Enlace polimórfico (`as` prop) con skip link        |
-| `ContainerText.astro` | Contenedor con título y descripción                 |
-| `Cards.astro`         | Cuadros con icono, título y descripción (variantes) |
-| `Cite.astro`          | Bloque quote/blockquote con autor                   |
+> **Node ≥ 22.12** (declarado en `package.json` y usado en ambos workflows).
 
 ---
 
-## 📦 Datos (src/data/)
+## 🎯 Alcance
 
-- **`metadata.ts`** — SEO, Open Graph, Twitter Card, canonical, preview image
-- **`products.ts`** — Datos de las tecnologías core (HTML5, CSS3, JavaScript, Responsive Design)
-- **`books.ts`** — Herramientas y mejores prácticas (Version Control, Build Tools, Package Managers, CSS Frameworks, Testing & Debugging, Performance Optimization)
-- **`faq.ts`** — Preguntas frecuentes
-- **`gallery.ts`** — Galería de imágenes de proyectos con metadata de Astro
-- **`affiliates.ts`** — Características clave ("Learn at Your Own Pace", "Build Real-World Projects", "Join a Supportive Community")
-- **`links.ts`** — Enlaces de navegación, redes, CTA
-- **`cite.ts`** — Cita destacada con autor y trabajo
+Esto es una demo de maquetación, no un producto. Lo siguiente es **intencional**, no un pendiente:
+
+| Punto                | Estado real                                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Tipo de proyecto** | Demo de **una sola página** para practicar Astro, Tailwind y accesibilidad. Sin backend.                                  |
+| **Enlaces**          | Los 16 enlaces de nav, footer y legales apuntan a `#`: no hay otra página a la que llevar.                                |
+| **CTAs**             | Los 4 botones ("Iniciar sesión", "Regístrate gratis", 2× "Empieza a crear hoy") no ejecutan acción.                       |
+| **Fuentes**          | No se carga ninguna fuente web: `--font-default` ("JetBrains Mono") cae al monospace del sistema. Cero requests externos. |
+| **Tests**            | Fuera de alcance. La garantía de calidad son los cuatro checks de arriba + CI.                                            |
+| **Idioma**           | Contenido en español (`lang="es"` en ambas páginas).                                                                      |
+
+---
+
+## ✨ Qué incluye
+
+- **Astro 7 (SSG)** — HTML estático; el JS en cliente son 2 scripts: el `ClientRouter` de view transitions (~16 KB) y un `<script type="module">` inline del menú mobile (~435 B).
+- **Tailwind CSS v4** — configuración CSS-first con `@theme` y design tokens en `src/styles/global.css`.
+- **Imágenes optimizadas** — `<Picture>` con `formats={["avif", "webp"]}`, `srcset`/`sizes` responsive y Sharp en build.
+- **SEO y metadatos** — `title`, `description`, `keywords`, canonical, Open Graph y Twitter Card (con `og:image:alt` y `og:locale`), en `src/metadata/metadata.ts`.
+- **astro-icon + Lucide** — iconos SVG con tree-shaking (`@iconify-json/lucide`).
+- **Sitemap + robots** — `@astrojs/sitemap` genera `sitemap-index.xml`; `robots.txt` (estático en `public/`) apunta a él.
+- **Página 404** propia, con `<title>` diferenciado gracias al prop `title` de `Layout`.
+- **TypeScript estricto** — `astro check` sobre `astro/tsconfigs/strict` con `typescript@5.9`, 0 errores.
+- **ESLint 10 + Prettier** — plugins de Astro, Tailwind y typescript-eslint, con `--check` en CI.
+- **Husky + lint-staged** — `prettier` + `eslint --fix` en cada commit.
+- **CI + Deploy separados** — un workflow valida, otro publica.
 
 ---
 
 ## ♿ Accesibilidad
 
-- Skip link en `Header` para navegación por teclado
-- Semántica HTML5 (`header`, `main`, `section`, `footer`, `nav`)
-- `alt` descriptivos en todas las imágenes
-- Contraste AA/AAA en tokens de color (Tailwind)
-- `prefers-reduced-motion` respetado (desactiva animaciones)
-- Focus visible en enlaces y botones
+- **Skip link real** — en `Layout.astro` (`"Saltar al contenido principal"`); el destino `#main-content` existe en `index.astro` y `404.astro`, verificado en el HTML compilado.
+- **Menú mobile con teclado** — `<button>` con `aria-expanded`/`aria-controls`/`aria-label` en español; `Escape` cierra y devuelve el foco al botón; se colapsa al seguir un enlace.
+- **Semántica HTML5** — `header`, `main`, `section`, `footer`, `nav`, `figure`, `blockquote`; `role="list"` en las listas de enlaces.
+- **11 `alt` descriptivos** en el mismo idioma que el contenido: 10 de las imágenes y 1 del logo del header.
+- **FAQ accesible** — 5 preguntas con `<details>`/`<summary>` nativos.
+- **Jerarquía de encabezados** — 1 `h1` → 7 `h2` → 16 `h3`, sin `id` duplicados (verificado en `dist/index.html`).
+- **`:focus-visible` global** con outline de 2px sobre `--color-primary`.
+- **`prefers-reduced-motion`** desactiva animaciones, transiciones y `scroll-behavior`.
+- **Contraste AA/AAA medido** sobre los tokens reales de `src/styles/global.css`:
+
+| Elemento                                   | Color                     | Ratio         |
+| ------------------------------------------ | ------------------------- | ------------- |
+| Texto principal                            | `#120926` sobre blanco    | 19.22:1 (AAA) |
+| Texto secundario                           | `#5c43a3` sobre blanco    | 7.54:1 (AAA)  |
+| Texto secundario sobre `bg-secondary`      | `#5c43a3` sobre `#f7f5fa` | 6.96:1 (AA)   |
+| Botón primario (`text-bg` sobre `primary`) | `#ffffff` sobre `#5833e4` | 6.98:1 (AA)   |
+| Indicador de foco `:focus-visible`         | `#5833e4` sobre blanco    | 6.98:1 (AA)   |
+| Links del footer                           | `#f7f5fa` sobre `#120926` | 17.75:1 (AAA) |
 
 ---
 
 ## ⚡ Performance
 
-| Optimización               | Implementación                                               | Impacto                      |
-| -------------------------- | ------------------------------------------------------------ | ---------------------------- |
-| **Imágenes AVIF + WebP**   | `<Picture formats={['avif','webp']} layout="constrained" />` | -20-45% vs WebP solo         |
-| **Responsive images**      | `srcset` + `sizes` automático via `layout="constrained"`     | Tamaño correcto por viewport |
-| **Hero priority**          | `priority` prop (eager + sync + fetchpriority=high)          | LCP optimizado               |
-| **Lazy loading**           | `loading="lazy"` + `decoding="async"` below-the-fold         | Ahorro ancho de banda        |
-| **Font preconnect**        | `preconnect` a `fonts.googleapis.com` + `fonts.gstatic.com`  | -100-200ms DNS/TLS           |
-| **Font preload**           | `preload` font regular 400 (más usada)                       | Descarga inmediata           |
-| **Non-blocking CSS**       | `media="print" onload="this.media='all'"`                    | Sin bloqueo render           |
-| **Font weights reducidos** | 4 pesos (400,500,700 + italic 400) vs 18 originales          | -78% requests fuente         |
-| **Sitemap + robots**       | `@astrojs/sitemap` auto-generado                             | Indexación completa          |
+| Optimización               | Implementación                                                              |
+| -------------------------- | --------------------------------------------------------------------------- |
+| **AVIF + WebP responsive** | 10 `<Picture formats={["avif","webp"]}>` (hero, testimonial y 8 de galería) |
+| **`srcset` + `sizes`**     | 29 `srcset` con anchos de 374w a 736w, elegidos por el navegador            |
+| **LCP con prioridad**      | Hero con `priority` → `fetchpriority="high"` + `loading="eager"`            |
+| **Below-the-fold lazy**    | 9 imágenes con `loading="lazy"` + `decoding="async"`                        |
+| **Sin fuentes externas**   | 0 requests de fuente: sin `@font-face`, `preconnect` ni `preload`           |
+| **JS mínimo**              | 2 scripts: `ClientRouter` (~16 KB) + inline del menú (~435 B)               |
+| **Sitemap + robots**       | `sitemap-index.xml` generado en build; `robots.txt` estático lo referencia  |
+| **Sharp en build**         | AVIF `effort: 4`, WebP `effort: 5`, mozjpeg, PNG `compressionLevel: 9`      |
 
 ---
 
-## 🔧 Stack técnico
+## 📁 Estructura
 
-| Herramienta      | Versión | Uso                                           |
-| ---------------- | ------- | --------------------------------------------- |
-| Astro            | 7.x     | SSG, islas, optimización assets               |
-| @astrojs/sitemap | 3.x     | Generación sitemap.xml + robots.txt           |
-| Tailwind CSS     | 4.x     | Utility-first, design tokens                  |
-| TypeScript       | 5.x     | Tipado estricto                               |
-| ESLint           | 9.x     | Linting (plugin-astro, plugin-tailwind)       |
-| Prettier         | 3.x     | Formato (plugin-astro, plugin-tailwind)       |
-| Husky            | 9.x     | Git hooks                                     |
-| lint-staged      | 17.x    | Lint/format solo en archivos staged           |
-| Sharp            | 0.35.x  | Transformación imágenes en build (AVIF, WebP) |
-| astro-icon       | 1.x     | Iconos SVG (Iconify + locales)                |
+```text
+src/
+├── assets/              # 10 imágenes (8 JPG + 2 PNG) procesadas por Astro en build
+├── components/          # Button, Link, Cards, ContainerText, Cite
+├── data/                # products, books, faq, gallery, affiliates, links, cite
+├── layouts/             # Layout, Header, Hero, Products, Feature, Testimonial, Gallery, Affiliates, Faq, Footer
+├── metadata/            # metadata.ts (title, description, OG, Twitter, canonical)
+├── pages/               # index.astro, 404.astro
+└── styles/              # global.css (design tokens + reset de accesibilidad)
+public/
+├── favicon.png          # favicon y logo del header
+├── preview.png          # imagen Open Graph / Twitter Card
+└── robots.txt           # con referencia al sitemap-index.xml
+.github/workflows/
+├── ci.yml               # lint + format:check + build + astro check
+└── deploy.yml           # build + deploy a GitHub Pages
+```
+
+Aliases de `tsconfig.json`: `@assets`, `@components`, `@data`, `@layouts`, `@metadata`.
+
+---
+
+## 🧱 Componentes
+
+| Componente            | Rol y props reales                                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `Layout.astro`        | Shell HTML: metadata SEO, Open Graph/Twitter, favicon vía `BASE_URL`, skip link, `<ClientRouter>`; prop opcional `title` |
+| `Header.astro`        | Navbar sticky con menú mobile accesible: `<button aria-expanded aria-controls>`, cierra con `Escape` y devuelve el foco  |
+| `Hero.astro`          | `h1`, párrafo, CTA y `<Picture priority>` del wallpaper                                                                  |
+| `Products.astro`      | `ContainerText` + grilla de `Cards` (tecnologías core)                                                                   |
+| `Feature.astro`       | `ContainerText` + `Cards` con variante `book` (herramientas y prácticas)                                                 |
+| `Testimonial.astro`   | Imagen lazy, `Cite`, párrafo y CTA                                                                                       |
+| `Gallery.astro`       | 8 `<Picture>` lazy en grilla responsive                                                                                  |
+| `Affiliates.astro`    | `ContainerText` + 3 `Cards` variante `book` ("Aprende", "Crea", "Únete")                                                 |
+| `Faq.astro`           | 5 preguntas con `<details>`/`<summary>` nativos                                                                          |
+| `Footer.astro`        | 3 columnas de links + links legales + copyright. Sin redes sociales                                                      |
+| `Button.astro`        | Props: `label`, `className?`, `variant?` (boolean). Sin `type` ni evento: no ejecuta acción                              |
+| `Link.astro`          | Props: `url`, `label`, `className?`, `skip?` (variante para el skip link)                                                |
+| `ContainerText.astro` | Props: `title`, `description` — `h2` + párrafo centrados                                                                 |
+| `Cards.astro`         | Props: `title`, `description`, `icon?`, `book?`, `className?` — `<article>` con icono Lucide opcional                    |
+| `Cite.astro`          | `<blockquote>` con cita y autor; importa `src/data/cite.ts` directamente (sin props)                                     |
+
+Las secciones (`Products`, `Feature`, `Gallery`, `Affiliates`, `Faq`) se componen desde `src/pages/index.astro` con los datos de `src/data/`.
+
+---
+
+## 📦 Datos y metadata
+
+| Archivo                    | Contenido                                                                                                 |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `src/data/products.ts`     | Tecnologías core (4 cards con iconos Lucide) e interfaz `CardsProps`                                      |
+| `src/data/books.ts`        | Herramientas y prácticas del desarrollo moderno (reutiliza `CardsProps`)                                  |
+| `src/data/faq.ts`          | 5 preguntas frecuentes                                                                                    |
+| `src/data/gallery.ts`      | 8 imágenes con imports de `@assets` y `alt` en español                                                    |
+| `src/data/affiliates.ts`   | 3 características: "Aprende a tu propio ritmo", "Crea proyectos reales", "Únete a una comunidad de apoyo" |
+| `src/data/links.ts`        | Nav (3), columnas de footer (10) y legales (3) — todos con `url: "#"`                                     |
+| `src/data/cite.ts`         | Cita destacada con autor y trabajo                                                                        |
+| `src/metadata/metadata.ts` | Título, descripción, keywords, author, imagen/alt y canonical                                             |
+
+---
+
+## 🔧 Stack
+
+| Herramienta         | Versión | Uso                                        |
+| ------------------- | ------- | ------------------------------------------ |
+| Astro               | 7.3.2   | SSG, optimización de assets                |
+| Tailwind CSS        | 4.3.3   | Utility-first + design tokens              |
+| TypeScript          | 5.9.3   | Tipado estricto (`astro check`)            |
+| ESLint              | 10.10.0 | Linting (plugin-astro, plugin-tailwindcss) |
+| Prettier            | 3.9.6   | Formato (plugin-astro, plugin-tailwindcss) |
+| @astrojs/check      | 0.9.10  | Diagnósticos de tipos Astro                |
+| @astrojs/sitemap    | 3.7.4   | sitemap-index.xml                          |
+| astro-icon          | 1.2.0   | Iconos SVG (Lucide)                        |
+| Sharp               | 0.35.4  | Transformación de imágenes en build        |
+| Husky / lint-staged | 9 / 17  | Git hooks                                  |
+
+---
+
+## 🔁 CI/CD
+
+**`ci.yml`** — en cada push y pull request (pnpm 11.21.0, Node 22):
+
+1. `pnpm install --frozen-lockfile`
+2. `pnpm run lint`
+3. `pnpm run format:check`
+4. `pnpm run build`
+5. `pnpm run check`
+
+**`deploy.yml`** — en push a `main` (o manual vía `workflow_dispatch`):
+
+1. `withastro/action@v6` (Node 22) → instala y buildea
+2. `actions/deploy-pages@v4` → publica `dist/` en el entorno `github-pages`
+
+La `base` está en `astro.config.mjs`:
+
+```js
+site: "https://14bryanespinoza.github.io/podia/",
+base: "/podia/",
+build: { assets: "assets" },
+```
 
 ---
 
 ## 📝 Licencia
 
-MIT — libre para uso personal y educativo.
+[MIT](LICENSE) — libre para uso personal y educativo.

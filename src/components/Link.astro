@@ -6,11 +6,12 @@ interface Props {
   skip?: boolean;
 }
 
-const { url, label, className = "", skip = false } = Astro.props as Props;
 const baseStyle =
-  "text-sm hover:scale-105 hover:underline hover:font-bold hover:text-primary transition-all";
+  "inline-block text-sm transition hover:scale-105 hover:underline hover:font-bold hover:text-primary transition-all";
 const skipStyle =
-  "inline text-bg bg-primary absolute top-0 left-4 z-50 -translate-y-12 rounded-md px-6 py-1 transition-all focus:translate-y-4";
+  "sr-only text-bg transition focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-2 focus:rounded-md focus:font-bold focus:bg-primary";
+
+const { url, label, className = "", skip = false } = Astro.props as Props;
 ---
 
 <a href={url} class={`${skip ? skipStyle : baseStyle} ${className}`}>
