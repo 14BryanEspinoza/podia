@@ -1,18 +1,14 @@
 ---
 interface Props {
-  id: string;
   title: string;
   description: string;
 }
 
-const { id, title, description } = Astro.props as Props;
+const { title, description } = Astro.props;
 ---
 
 <div class="mx-auto my-0 mb-4 max-w-3xl text-center">
-  <h2
-    id=`${id}-title`
-    class="mb-4 text-xl font-bold text-primary md:text-2xl lg:text-4xl"
-  >
+  <h2 class="mb-4 text-xl font-bold text-primary md:text-2xl lg:text-4xl">
     {title}
   </h2>
 
