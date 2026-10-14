@@ -33,7 +33,7 @@ const { title } = Astro.props;
     <meta property="og:locale" content="es_ES" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={metadata.title} />
+    <meta name="twitter:title" content={title || metadata.title} />
     <meta name="twitter:description" content={metadata.description} />
     <meta name="twitter:image" content={metadata.image} />
     <meta name="twitter:image:alt" content={metadata.imageAlt} />
