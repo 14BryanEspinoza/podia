@@ -11,7 +11,7 @@ export const books: CardsProps = {
         "Haz seguimiento de los cambios, colabora con otros y gestiona tu base de código con Git. Crea ramas, combina y despliega con confianza.",
     },
     {
-      title: "Herramientas de build",
+      title: "Herramientas de ecosistema",
       description:
         "Automatiza tu flujo de trabajo con bundlers y task runners. Compila, minifica y optimiza tu código para producción con un solo comando.",
     },
