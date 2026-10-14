@@ -2,11 +2,8 @@
 import { faq } from "@data/faq";
 ---
 
-<section class="px-8 py-24 md:px-12 lg:px-16" aria-labelledby="faq-title">
-  <h2
-    id="faq-title"
-    class="mb-4 text-xl font-bold text-primary md:text-2xl lg:text-4xl"
-  >
+<section class="px-8 py-24 md:px-12 lg:px-16">
+  <h2 class="mb-4 text-xl font-bold text-primary md:text-2xl lg:text-4xl">
     {faq.title}
   </h2>
 
@@ -14,10 +11,10 @@ import { faq } from "@data/faq";
     {faq.question.map((item) => (
       <li>
         <details class="rounded-md border border-border bg-bg-secondary p-4">
-          <summary class="cursor-pointer p-2 text-primary hover:text-accent">
+          <summary class="cursor-pointer p-2 text-text-secondary hover:text-primary">
             {item.summary}
           </summary>
-          <p class="mt-4 px-12 text-accent">{item.info}</p>
+          <p class="mt-4 px-12 text-text-secondary">{item.info}</p>
         </details>
       </li>
     ))}
